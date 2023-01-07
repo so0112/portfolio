@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { Inter } from '@next/font/google';
 import Layout from '../components/Layout';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -22,15 +23,6 @@ export default function Home() {
                 FE 개발자 신상오입니다
               </h1>
               <p className="mb-8 leading-relaxed">
-                정보기술과 경영전략 강의를 듣고 IT 서비스 개발에 관심이 생겨
-                <br />
-                교양, 전공 가리지 않고 프로그래밍과 관련된 강의를 다수
-                <br />
-                수강했으며 웹 서비스로 유저들과 상호작용 할 수 있는 프론트엔드
-                <br />
-                개발에 가장 흥미를 느꼈고 전문지식을 쌓기 위해
-                <br />
-                프론트엔드 부트캠프 과정을 수료했습니다. <br />
                 <br />
                 현재는 정적 타입언어와 전역 상태 관리에
                 <br />
@@ -41,9 +33,12 @@ export default function Home() {
                 적용하면서 알게 된 내용을 블로그에 기록하며 학습하고 있습니다.
               </p>
               <div className="flex justify-center">
-                <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                <Link
+                  href={'/project'}
+                  className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                >
                   프로젝트 보러가기
-                </button>
+                </Link>
               </div>
             </div>
             <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6"></div>
