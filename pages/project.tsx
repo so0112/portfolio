@@ -1,11 +1,31 @@
 import React from 'react';
 import axios from 'axios';
 import { DATABASE_ID, TOKEN } from './config';
-import { result } from './types/project';
+import { Projects, ResultsEntity, Properties } from './types/project';
+import Layout from '../components/home/Layout';
+import ProjectItem from '../components/projects/ProjectItem';
 
-const project = () => {
-  return <div>project</div>;
-};
+interface ProjectProps {
+  projects: ResultsEntity[];
+}
+
+function project({ projects }: ProjectProps) {
+  return (
+    <>
+      <Layout className="flex flex-col itmes-center justify-center min-h-sß px-5 py-24 mb-10">
+        <h1 className="p-6 m-3 text-4xl font-bold sm:text-4xl">
+          총 프로젝트 :{' '}
+          <span className="pl-3 text-blue-500"> {projects.length}</span>
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 sm:w-full">
+          {projects.map((project: ResultsEntity) => (
+            <ProjectItem key={project.id} data={project} />
+          ))}
+        </div>
+      </Layout>
+    </>
+  );
+}
 
 export default project;
 
@@ -31,14 +51,9 @@ export async function getStaticProps() {
   };
 
   const res = await axios.request(options);
-  const projects = await res.data;
+  const projects = await res.data.results;
 
-  const projectIds = projects.results.map((project: result) =>
-    project.properties.Name.title.map(item => item.plain_text)
-  );
-
-  console.log(projectIds);
   return {
-    props: { projects }, // will be passed to the page component as props
+    props: { projects },
   };
 }
