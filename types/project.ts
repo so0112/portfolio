@@ -13,7 +13,7 @@ export interface ResultsEntity {
   last_edited_time: string;
   created_by: CreatedByOrLastEditedBy;
   last_edited_by: CreatedByOrLastEditedBy;
-  cover?: Cover | null;
+  cover: Cover;
   icon?: null;
   parent: Parent;
   archived: boolean;
@@ -26,9 +26,10 @@ export interface CreatedByOrLastEditedBy {
 }
 export interface Cover {
   type: string;
-  external: External;
+  external: Url;
+  file: Url;
 }
-export interface External {
+export interface Url {
   url: string;
 }
 export interface Parent {

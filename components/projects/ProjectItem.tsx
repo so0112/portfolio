@@ -10,8 +10,13 @@ const ProjectItem = ({ data }: ProjectItemProps) => {
   const title = data.properties.Name.title[0].plain_text;
   const github = data.properties.Github.url;
   const description = data.properties.Description.rich_text[0].plain_text;
-  const imgSrc = data.cover?.external.url || "/images/nextjs.png";
+
+  // TODO: 이미지 data 에러 블로깅
+  const imgSrc = data.cover.file?.url || data.cover.external?.url;
+
   const tags = data.properties.Tags.multi_select;
+
+  console.log(data.cover?.file);
 
   return (
     <div className="flex flex-col m-3 bg-slate-400 rounded-xl">
