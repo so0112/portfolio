@@ -1,9 +1,6 @@
 import Head from "next/head";
-import { Inter } from "@next/font/google";
 import Layout from "../components/home/Layout";
-import Link from "next/link";
 import Intro from "../components/intro";
-import Animation from "../components/home/animation";
 
 export default function Home() {
   return (
