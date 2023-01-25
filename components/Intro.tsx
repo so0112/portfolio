@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import Animation from "./home/animation";
+import Animation from "./home/Animation";
 
 const Intro = () => {
   return (

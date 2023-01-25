@@ -16,8 +16,6 @@ const ProjectItem = ({ data }: ProjectItemProps) => {
 
   const tags = data.properties.Tags.multi_select;
 
-  console.log(data.cover?.file);
-
   return (
     <div className="flex flex-col m-3 bg-slate-400 rounded-xl">
       <div>
