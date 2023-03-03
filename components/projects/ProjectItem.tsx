@@ -17,15 +17,13 @@ const ProjectItem = ({ data }: ProjectItemProps) => {
   const tags = data.properties.Tags.multi_select;
 
   return (
-    <div className="flex flex-col m-3 bg-slate-400 rounded-xl">
-      <div>
-        <Image className="rounded-t-xl" src={imgSrc} alt="cover image" width="50" height="60" layout="responsive" />
-      </div>
+    <div className="flex flex-col m-3 rounded-xl">
+      <Image className="rounded-t-xl" src={imgSrc} alt="cover image" width="40" height="30" layout="responsive" />
 
-      <div className="p-3">
+      <div className="p-3 h-50 bg-slate-300 rounded-b-xl">
         <h1 className="font-bold text-xl">{title}</h1>
         <div>{description}</div>
-        <a className="hover:text-gray-400" href={github} target="_blank" rel="noreferrer">
+        <a className="hover:text-gray-100" href={github} target="_blank" rel="noreferrer">
           깃허브 바로가기
         </a>
         <div className="flex flex-wrap items-start mt-2">
