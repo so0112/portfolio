@@ -38,6 +38,7 @@ export interface Parent {
 }
 export interface Properties {
   Github: Github;
+  Deploy: Deploy;
   Description: Description;
   Period: Period;
   Tags: Tags;
@@ -47,6 +48,12 @@ export interface Github {
   id: string;
   type: string;
   url?: string;
+}
+
+export interface Deploy {
+  id: string;
+  type: string;
+  url: string;
 }
 export interface Description {
   id: string;
@@ -75,7 +82,7 @@ export interface Annotations {
 export interface Period {
   id: string;
   type: string;
-  date?: Date | null;
+  date: Date;
 }
 export interface Date {
   start: string;

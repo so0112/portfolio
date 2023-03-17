@@ -12,7 +12,7 @@ interface ProjectProps {
 function project({ projects }: ProjectProps) {
   return (
     <>
-      <Layout className="flex flex-col h-screen itmes-center justify-center min-h-sß px-5 py-24 mb-10">
+      <Layout className="flex flex-col h-screen itmes-center justify-center min-h-sß px-5 py-24">
         <h1 className="p-6 m-3 text-4xl font-bold sm:text-4xl">
           총 프로젝트 : <span className="pl-3 text-blue-500"> {projects.length}</span>
         </h1>
