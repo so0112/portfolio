@@ -12,8 +12,8 @@ const ProjectItem = ({ data }: ProjectItemProps) => {
   const description = data.properties.Description.rich_text[0].plain_text;
 
   // TODO: 이미지 data 에러 블로깅
-  const imgSrc = data.cover?.file?.url || data.cover?.external?.url;
-
+  const imgSrc = data.cover.file?.url;
+  console.log(imgSrc);
   const tags = data.properties.Tags.multi_select;
 
   return (
