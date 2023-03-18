@@ -18,7 +18,7 @@ const ProjectItem = ({ data }: ProjectItemProps) => {
   const tags = data.properties.Tags.multi_select;
 
   return (
-    <div className="flex flex-col m-3 rounded-xl w-70">
+    <div className="flex flex-col m-3 rounded-xl hover:scale-105 transition-transform ease-in-out duration-200">
       <a href={deployUrl}>
         <div className="flex h-80 overflow-hidden">
           <Image className="rounded-t-xl" src={imgSrc} alt="커버 이미지" width={1000} height={200} />
@@ -28,10 +28,13 @@ const ProjectItem = ({ data }: ProjectItemProps) => {
         <h1 className="font-bold text-xl">{title}</h1>
         <div className="mb-1">{description}</div>
         <a className="hover:text-gray-500 flex items-center" href={githubUrl} target="_blank" rel="noreferrer">
-          <Image className="mr-1 w-4 h-4 rounded-xl center" src={gitLogo} alt="git"></Image> 깃허브 바로가기
+          <Image className="mr-1 w-4 h-4 rounded-xl center" src={gitLogo} alt="git"></Image> 깃허브 링크
         </a>
         <a className="hover:text-gray-500 flex items-center" href={deployUrl} target="_blank" rel="noreferrer">
-          <Image className="mr-1 w-4 h-4 center" src={notionLogo} alt="notion"></Image>배포사이트 바로가기
+          🔗 배포사이트 링크
+        </a>
+        <a className="hover:text-gray-500 flex items-center" href={deployUrl} target="_blank" rel="noreferrer">
+          <Image className="mr-1 w-4 h-4 center" src={notionLogo} alt="notion"></Image> 프로젝트 소개 링크
         </a>
         <div className="flex flex-wrap items-start mt-2">
           {tags?.map((tag) => (
